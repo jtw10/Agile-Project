@@ -65,6 +65,14 @@ body{
     color: white;
 
 }
+.store {
+    background-image: url("../Images/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    }
 .title {
     text-align: Center;
     color: #E3E3E3;

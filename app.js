@@ -119,11 +119,11 @@ app.get('/sign_up', (request, response) => {
     })
 });
 
-app.get('/store', (request, response) => {
-    response.render('store.hbs', {
-        title_page: 'Store',
-        header: 'Store',
-        username: user
+app.get('/store_sword', (request, response) => {
+    response.render('store_sword.hbs', {
+        title_page: 'Sword',
+        header: 'Sword',
+        username: f_name
     })
 });
 
@@ -137,8 +137,8 @@ app.get('/store_spear', (request, response) => {
 
 app.get('/store_blunt', (request, response) => {
     response.render('store_blunt.hbs', {
-        title_page: 'Store',
-        header: 'Store',
+        title_page: 'Blunt',
+        header: 'Blunt',
         username: user
     })
 });
