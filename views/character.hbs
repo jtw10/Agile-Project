@@ -8,12 +8,14 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
         <link rel="stylesheet" href="StyleSheet/StyleSheet.css">
-        <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Gugi" rel="stylesheet">
+
     </head>
     <body class="background">
 
             {{> header}}
             {{> nav_bar_char}}
+
 
         <div class="container">
             <div class="row">
@@ -31,6 +33,28 @@
                     <form method="POST" action="/delete">
                         <input type="submit" class="btn btn-dark" value="Delete Existing Character">
                     </form>
+
+            <div class="container" >
+                <div class="row" >
+                    <div class="col-md-4 lightbox">
+                        <h1>Character Stats</h1>
+                        {{> character_stats}}
+                    </div>
+                    <div class="col-md-4"></div>
+                    <div class="col-md-4 lightbox">
+                        <h1>Fight!</h1>
+                        <div>
+                            <a href="/fight" class="btn btn-outline-light"><img src="Images/fist.png" height="35" width="35"> Go Fighting</a>
+                            <a href="/update_name" class="btn btn-outline-light">Update Character Name</a>
+                        </div>
+                        <br>
+                        {{> back_button}}
+                        <br>
+                        <a href="/character_creation" class="btn btn-dark">Create new Character</a>
+                        <form method="POST" action="/delete">
+                            <input type="submit" class="btn btn-dark" value="Delete Existing Character">
+                        </form>
+                    </div>
                 </div>
                 <div class="col-md-4"></div>
             </div>
