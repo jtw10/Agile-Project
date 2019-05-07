@@ -1,7 +1,10 @@
 nav {
     margin-top: 0;
 }
-
+h1{
+    text-align:center;
+    color:white;
+}
 .background {
     background-image: url("../Images/background.jpg");
     background-attachment: fixed;
@@ -13,7 +16,7 @@ nav {
 
 .lightbox {
     background:rgba(61, 55, 55,0.3);
-    border: 0px solid rgb(0, 0, 0);
+    border: 20px solid rgb(0, 0, 0);
     padding: 50px;
     width: 100%;
     float: none;
@@ -23,11 +26,24 @@ nav {
     text-align: center;
     color: white;
 }
+.minibox {
+    background:rgba(61, 55, 55,0.3);
+    border: 0px solid rgb(0, 0, 0);
+    padding: 25px;
+    width: 18%;
+    float: none;
+    display: inline-block;
+    border-radius: 12px;
+    margin: 0 auto;
+    text-align: center;
+    color: white;
+
+}
 .title {
     text-align: Center;
     color: #E3E3E3;
-    font-family: 'Permanent Marker', cursive;
-    font-size: 50px;
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size: 53px;
 }
 
 .center {
@@ -36,29 +52,60 @@ nav {
 
 .nav_text{
     color: #E3E3E3;
-    font-family: 'Permanent Marker', cursive;
+    font-family: 'Gloria Hallelujah', cursive;
     font-size: 20px;
 }
-a{
-    color:white;
-}
-a:hover{
-    color:gray;
-    text-decoration: none;
-}
-.footer{
-    position: fixed;
-    bottom:0;
+
+meter {
+    /* Reset the default appearance */
+    -webkit-appearance: meter;
+    -moz-appearance: none;
+
+    margin: 0 auto 1em;
     width: 100%;
-    height: 60px;
-    line-height: 60px;
-    text-align: right;
-    font-family: 'Permanent Marker', cursive;
-    color:white;
+    height: 0.5em;
+
+    /* Applicable only to Firefox */
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
 }
-p{
-    font-family: 'Gloria Hallelujah', cursive;
+
+meter::-webkit-meter-bar {
+    background: none;
+    background-color: rgba(0, 0, 0, 0.1);
 }
-div{
-    font-family: 'Gloria Hallelujah', cursive;
+
+/* Webkit based browsers */
+meter[value="1"]::-webkit-meter-optimum-value { background: red; }
+meter[value="2"]::-webkit-meter-optimum-value { background: yellow; }
+meter[value="3"]::-webkit-meter-optimum-value { background: orange; }
+meter[value="4"]::-webkit-meter-optimum-value { background: green; }
+
+/* Gecko based browsers */
+meter[value="1"]::-moz-meter-bar { background: red; }
+meter[value="2"]::-moz-meter-bar { background: yellow; }
+meter[value="3"]::-moz-meter-bar { background: orange; }
+meter[value="4"]::-moz-meter-bar { background: green; }
+
+#weapon {
+    padding:12px;
+    font-family: 'Gloria Hallelujah';
+}
+
+.store {
+    background-image: url("../Images/background.png");
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+}
+
+.zoom {
+    transition: transform .2s; /* Animation */
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    transform: scale(1.5); /* (150% zoom - Note: if the zoom is too large, it will go outside of the viewport) */
 }
