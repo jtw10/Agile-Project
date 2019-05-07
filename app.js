@@ -35,6 +35,8 @@ var user = 'Characters';
 
 
 const user_db = require('./javascript/user_db.js');
+const character_db = require('./javascript/character_db.js');
+
 const fight = require('./javascript/fighting_saves.js');
 
 var f_name = '';
@@ -116,6 +118,31 @@ app.get('/sign_up', (request, response) => {
         username: user
     })
 });
+
+app.get('/store_sword', (request, response) => {
+    response.render('store_sword.hbs', {
+        title_page: 'Sword',
+        header: 'Sword',
+        username: f_name
+    })
+});
+
+app.get('/store_spear', (request, response) => {
+    response.render('store_spear.hbs', {
+        title_page: 'Spear',
+        header: 'Spear',
+        username: f_name
+    })
+});
+
+app.get('/store_blunt', (request, response) => {
+    response.render('store_blunt.hbs', {
+        title_page: 'Blunt',
+        header: 'Blunt',
+        username: user
+    })
+});
+
 
 app.post('/insert', (request, response) => {
     var first_name = request.body.first_name;
@@ -381,6 +408,7 @@ app.post('/delete', (request, response) => {
 app.listen(port, () => {
     console.log(`Server is up on the port ${port}`);
 });
+
 
 module.exports = app
 
