@@ -119,28 +119,139 @@ app.get('/sign_up', (request, response) => {
     })
 });
 
-app.get('/store_sword', (request, response) => {
-    response.render('store_sword.hbs', {
-        title_page: 'Sword',
-        header: 'Sword',
-        username: f_name
-    })
+app.get('/store_sword', async (request, response) => {
+    if (authentication === false) {
+        response.redirect('/')
+    } else {
+        var exist = await user_db.check_character_exist(user_email);
+        if (exist === true) {
+            try {
+                var users_character = await fbdb.collection('characters').doc(user_email).get();
+                var character_name = await users_character.data()['character_name'];
+                var health = await users_character.data()['character_health'];
+                var dps = await users_character.data()['character_dps']
+
+                response.render('store_sword.hbs', {
+                    title_page: 'Sword',
+                    header: 'Sword',
+                    username: f_name,
+                    character_name: `${character_name}`,
+                    character_health: `${health}`,
+                    character_dps: `${dps}`
+                })
+            } catch (e) {
+                response.render('character.hbs', {
+                    title_page: 'My Character Page',
+                    header: 'Character Stats',
+                    username: f_name,
+                    character_name: 'CREATE CHARACTER NOW',
+                    character_health: 'CREATE CHARACTER NOW',
+                    character_dps: 'CREATE CHARACTER NOW'
+                })
+            }
+        } else {
+            response.render('character.hbs', {
+                title_page: 'My Character Page',
+                header: 'Character Stats',
+                username: f_name,
+                character_name: 'CREATE CHARACTER NOW',
+                character_health: 'CREATE CHARACTER NOW',
+                character_dps: 'CREATE CHARACTER NOW'
+            })
+        }
+    }
+
+
 });
 
-app.get('/store_spear', (request, response) => {
-    response.render('store_spear.hbs', {
-        title_page: 'Spear',
-        header: 'Spear',
-        username: f_name
-    })
+app.get('/store_spear', async (request, response) => {
+    if (authentication === false) {
+        response.redirect('/')
+    } else {
+        var exist = await user_db.check_character_exist(user_email);
+        if (exist === true) {
+            try {
+                var users_character = await fbdb.collection('characters').doc(user_email).get();
+                var character_name = await users_character.data()['character_name'];
+                var health = await users_character.data()['character_health'];
+                var dps = await users_character.data()['character_dps']
+
+                response.render('store_spear.hbs', {
+                    title_page: 'Spear',
+                    header: 'Spear',
+                    username: f_name,
+                    character_name: `${character_name}`,
+                    character_health: `${health}`,
+                    character_dps: `${dps}`
+                })
+            } catch (e) {
+                response.render('character.hbs', {
+                    title_page: 'My Character Page',
+                    header: 'Character Stats',
+                    username: f_name,
+                    character_name: 'CREATE CHARACTER NOW',
+                    character_health: 'CREATE CHARACTER NOW',
+                    character_dps: 'CREATE CHARACTER NOW'
+                })
+            }
+        } else {
+            response.render('character.hbs', {
+                title_page: 'My Character Page',
+                header: 'Character Stats',
+                username: f_name,
+                character_name: 'CREATE CHARACTER NOW',
+                character_health: 'CREATE CHARACTER NOW',
+                character_dps: 'CREATE CHARACTER NOW'
+            })
+        }
+    }
+
+
 });
 
-app.get('/store_blunt', (request, response) => {
-    response.render('store_blunt.hbs', {
-        title_page: 'Blunt',
-        header: 'Blunt',
-        username: user
-    })
+app.get('/store_blunt', async (request, response) => {
+    if (authentication === false) {
+        response.redirect('/')
+    } else {
+        var exist = await user_db.check_character_exist(user_email);
+        if (exist === true) {
+            try {
+                var users_character = await fbdb.collection('characters').doc(user_email).get();
+                var character_name = await users_character.data()['character_name'];
+                var health = await users_character.data()['character_health'];
+                var dps = await users_character.data()['character_dps']
+
+                response.render('store_blunt.hbs', {
+                    title_page: 'Blunt',
+                    header: 'Blunt',
+                    username: f_name,
+                    character_name: `${character_name}`,
+                    character_health: `${health}`,
+                    character_dps: `${dps}`
+                })
+            } catch (e) {
+                response.render('character.hbs', {
+                    title_page: 'My Character Page',
+                    header: 'Character Stats',
+                    username: f_name,
+                    character_name: 'CREATE CHARACTER NOW',
+                    character_health: 'CREATE CHARACTER NOW',
+                    character_dps: 'CREATE CHARACTER NOW'
+                })
+            }
+        } else {
+            response.render('character.hbs', {
+                title_page: 'My Character Page',
+                header: 'Character Stats',
+                username: f_name,
+                character_name: 'CREATE CHARACTER NOW',
+                character_health: 'CREATE CHARACTER NOW',
+                character_dps: 'CREATE CHARACTER NOW'
+            })
+        }
+    }
+
+
 });
 
 
