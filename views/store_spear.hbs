@@ -33,7 +33,10 @@
             <img src="" alt="" width="50" height="50" ><span id="weapon">SPOT FOR AVATAR</span>
         </div>
         <div class="minibox">
-            <img src="https://image.flaticon.com/icons/png/128/138/138497.png" alt="" width="50" height="50" class="zoom"><span id="weapon">Lance</span>
+            <img src="Images/lance.png" alt="" width="100" height="100" class="zoom">
+            <div>
+                <span id="weapon">Lance</span>
+            </div>
             <div>
                 <img src="https://image.flaticon.com/icons/svg/1477/1477228.svg"  alt="" width="25" height="25"><span id="weapon">4</span>
             </div>
@@ -49,8 +52,11 @@
             </div>
         </div>
         <div class="minibox">
-            <img src="https://image.flaticon.com/icons/png/128/1614/1614982.png" alt="" width="50" height="50"  class="zoom" onmouseover="PlaySound('mySound')"
-                 onmouseout="StopSound('mySound')"><span id="weapon">Javelin</span>
+            <img src="Images/javelin.png" alt="" width="100" height="100"  class="zoom" onmouseover="PlaySound('mySound')"
+                 onmouseout="StopSound('mySound')">
+                 <div>
+                    <span id="weapon">Javelin</span>
+                 </div>
             <div>
                 <img src="https://image.flaticon.com/icons/svg/1477/1477228.svg" alt="" width="25" height="25"><span id="weapon">10</span>
             </div>
@@ -65,8 +71,11 @@
             </div>
         </div>
         <div class="minibox">
-            <img src="https://image.flaticon.com/icons/png/128/1150/1150176.png" alt="" width="50" height="50"  class="zoom" onmouseover="PlaySound('mySound')"
-                 onmouseout="StopSound('mySound')"><span id="weapon">Glaive</span>
+            <img src="Images/glaive.png" alt="" width="100" height="100"  class="zoom" onmouseover="PlaySound('mySound')"
+                 onmouseout="StopSound('mySound')">
+                 <div>
+                    <span id="weapon">Glaive</span>
+                 </div>
             <div>
                 <img src="https://image.flaticon.com/icons/svg/1477/1477228.svg" alt="" width="25" height="25"><span id="weapon">30</span>
             </div>
@@ -81,10 +90,7 @@
             </div>
         </div>
         <div class="minibox">
-            <img src="https://image.flaticon.com/icons/png/128/148/148838.png" alt="" width="50" height="50"><span id="weapon">Hp</span>
-            <div>
-                <img src="https://image.flaticon.com/icons/svg/1477/1477228.svg" alt="" width="25" height="25"><span id="weapon">Attack</span>
-            </div>
+            {{> character_stats}}
             <div>
                 <img src="Images/coin.png" alt="" width="25" height="25"><span id="weapon">CURRENT HBucks</span>
             </div>
