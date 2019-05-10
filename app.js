@@ -74,9 +74,8 @@ app.get('/logout', (request, response) => {
 
 app.get('/index_b', async (request, response) => {
     var getmoney = await fbdb.collection('users').doc(user_email).get();
-    console.log(hbucks);
     hbucks = await getmoney.data()['hbucks'];
-    console.log(hbucks);
+    console.log(user_email, hbucks);
     response.render('index_b.hbs', {
         title_page: 'Official Front Page',
         header: 'Fight Simulator',
@@ -322,7 +321,8 @@ app.get('/battle', async (request, response) => {
             fbdb.collection('users').doc(user_email).update(lose);
             var lost = 'YOU LOSE';
             response.render('win_lose_page.hbs', {
-                win_lose: `${lost}`
+                win_lose: `${lost}`,
+                currency_earned: 0
             });
         } else if (new_enemy_health <= 0 && new_player_health > 0) {
             var current = await fbdb.collection('users').doc(user_email).get();
