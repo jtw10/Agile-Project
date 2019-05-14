@@ -1,5 +1,4 @@
 const assert = require('chai').assert;
-const database = require('../tdd_app.js');
 const app = require('../app.js');
 const chai = require('chai');
 chai.use(require('chai-http'));

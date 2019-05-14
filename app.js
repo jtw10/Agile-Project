@@ -76,9 +76,8 @@ app.get('/logout', (request, response) => {
 
 app.get('/index_b', async (request, response) => {
     var getmoney = await fbdb.collection('users').doc(user_email).get();
-    console.log(hbucks);
     hbucks = await getmoney.data()['hbucks'];
-    console.log(hbucks);
+    console.log(user_email, hbucks);
     response.render('index_b.hbs', {
         title_page: 'Official Front Page',
         header: 'Fight Simulator',
