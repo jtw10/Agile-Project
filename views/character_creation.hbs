@@ -26,7 +26,16 @@
                     <br>
                     <input class="form-control" label="name" type="text" placeholder="Enter Character Name" name="character_name" required minlength="1">
                     <br><br>
-
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Choose Character Class
+                        </button>
+                        <div class="dropdown-menu" aria-labelledby="dropdownMenuButton" id="character_class">
+                            <a class="dropdown-item" href="#">Sword</a>
+                            <a class="dropdown-item" href="#">Spear</a>
+                            <a class="dropdown-item" href="#">Axe</a>
+                        </div>
+                    </div>
                     <br><br>
                     <input type="submit" value="Create" class="btn btn-dark">
 
