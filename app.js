@@ -167,7 +167,6 @@ app.get('/store', async (request, response) => {
                         currency: `${money}`
                     })
                 }
-                
             } catch (e) {
                 response.render('character.hbs', {
                     title_page: 'My Character Page',
